@@ -1,6 +1,6 @@
 package spring.core.member;
 
-public interface MemberSerivce {
+public interface MemberService {
     //회원 가입, 회원 조회
 
     void join(Member member);

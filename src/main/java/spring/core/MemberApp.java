@@ -2,15 +2,16 @@ package spring.core;
 
 import spring.core.member.Grade;
 import spring.core.member.Member;
-import spring.core.member.MemberSerivce;
+import spring.core.member.MemberService;
 import spring.core.member.MemberServiceImpl;
 
 
 //spring을 전혀 사용하지 않고 java만을 사용해서 테스트
 public class MemberApp {
     public static void main(String[] args) {
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
 
-        MemberSerivce memberService = new MemberServiceImpl();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
         Member findMember = memberService.findMember(1L);
